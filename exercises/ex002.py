@@ -1,8 +1,7 @@
-''' EX002 - Greeting
-Create a program that reads user's name and prints a greeting message on screen saying their name.
+''' EX002 - Respondendo ao Usuário
+Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boas-vindas.
 '''
 
-user_name = input("What's your name? ")
+nome = input("Qual o seu nome? ")
 
-print(f"Pleasure to meet you, {user_name}!")
-
+print(f"Prazer em conhecê-lo, {nome}!")

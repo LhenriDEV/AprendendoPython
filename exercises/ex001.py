@@ -1,7 +1,9 @@
-''' EX001 - Hello, World!
-Create a program that prints "Hello, World" on the screen.
+''' EX001 - Olá, Mundo!
+Crie um programa que escreva "Olá, Mundo!" na tela.
 '''
 
-print("-=" * 20) # Note that two chars * 20 = 40 chars
-print("Hello, World!".center(40))
+msg = "Olá, Mundo!"
+
+print("-=" * 20)
+print(msg.center(40))
 print("-=" * 20)
