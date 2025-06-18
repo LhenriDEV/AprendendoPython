@@ -1,1 +1,8 @@
+# Ignorar arquivo de testes
 ambiente.py
+
+# Ignorar pasta (tambem testes)
+aprendizagem/
+
+# Ignorar qualquer arquivo de cache
+*.pyc
