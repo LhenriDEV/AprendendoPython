@@ -9,18 +9,28 @@ c) uma contagem personalizada
 > Contagem pode receber tanto valor negativo e positivo, e o programa deve identificar quando é pra contar para trás e para frente, independente do sinal
 > Se o passo for dado 0, considerar o passo sendo 1
 
-# TODO: (Tentar inverter o sinal do passo antes da lógica da contagem na função contador()) Dica: Multiplica o pas por -1 ou (pas = -pas)
-
 '''
 
 from time import sleep
 
 def contador(ini: int, fim: int, pas: int):
+    '''
+    Simula uma contagem na tela dos valores passados de acordo com o passo definido.
 
-    # Primeira estrutura cond. (Impede passo de ser 0)
+    Parâmetros:
+    
+    ini (int): número inicial da contagem
+
+    fim (int): número final da contagem
+
+    pas (int): passo de contagem
+    '''
+
+    # Primeira estrutura cond. (Impede passo de ser 0 e de ser negativo)
     if pas == 0:
         pas = 1
-
+    elif pas < 0:
+        pas = -pas # Transforma passo num valor positivo
 
     print("-="*30)
     print(f"Contagem de {ini} até {fim} de {pas} em {pas}")
@@ -29,25 +39,15 @@ def contador(ini: int, fim: int, pas: int):
     # Segunda estrutura cond. (Lógica da contagem) 
     # Contagem crescente
     if ini <= fim:
-        if pas > 0:
-            for c in range(ini, fim + 1, pas):
-                print(c, end=' ', flush=True)
-                sleep(0.5)
-        elif pas < 0: # (Garante que passo seja positivo)
-            for c in range(ini, fim + 1, -pas):
-                print(c, end=' ', flush=True)
-                sleep(0.5)
+        for c in range(ini, fim + 1, pas):
+            print(c, end=' ', flush=True)
+            sleep(0.5)
 
     # Contagem decrescente
     elif ini > fim:
-        if pas > 0: # (Garante que passo seja negativo)
-            for c in range(ini, fim - 1, -pas):
-                print(c, end=' ', flush=True)
-                sleep(0.5)
-        elif pas < 0:
-            for c in range(ini, fim - 1, pas):
-                print(c, end=' ', flush=True)
-                sleep(0.5)
+        for c in range(ini, fim - 1, -pas):
+            print(c, end=' ', flush=True)
+            sleep(0.5)
 
 
     print("FIM!")
