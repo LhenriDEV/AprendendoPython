@@ -6,3 +6,4 @@ aprendizagem/
 
 # Ignorar qualquer arquivo de cache
 *.pyc
+**/__pycache__/

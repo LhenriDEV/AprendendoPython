@@ -1,1 +1,1 @@
--- Repository for Python Exercises --
+-- Repositório dedicado a aprendizagem de Python e exercícios realizados do [Curso de Python do CursoEmVídeo](https://www.youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6) --
