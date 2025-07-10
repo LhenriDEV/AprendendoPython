@@ -4,7 +4,7 @@ init(autoreset=True)
 
 largura = 40
 
-# Função cadastrar
+
 def cadastrar():
     '''
     Cadastra uma pessoa no arquivo pessoas.txt
@@ -59,6 +59,7 @@ def cadastrar():
 
     print(f"{Fore.GREEN}Novo registro de {p} adicionado.")
 
+
 def listar():
     '''
     Imprime lista formatada das pessoas cadastradas no arquivo pessoas.txt
@@ -78,8 +79,60 @@ def listar():
 
             print(f"{nome.ljust(largura-10)} {idade} anos")
 
+
+def topico(txt):
+    print("-"*largura)
+    print(txt.center(largura))
+    print("-"*largura)
+
+
+def menu():
+
+    loop_menu = True
+
+    while loop_menu:
+        # Impressão
+        topico("MENU PRINCIPAL")
+        print(f"{Fore.YELLOW}1 - {Fore.BLUE}Ver pessoas cadastradas\n{Fore.YELLOW}2 - {Fore.BLUE}Cadastrar nova Pessoa\n{Fore.YELLOW}3 - {Fore.BLUE}Sair do Sistema")
+        print("-"*largura)
+
+        # Validação opção
+        while True:
+            
+            # Validação de valor da opção
+            while True:
+                try:
+                    opcao = int(input(f"{Fore.YELLOW}Sua Opção:{Style.RESET_ALL} "))
+                except ValueError:
+                    print(f"{Fore.RED}Opção deve ser um número!")
+                except Exception as e:
+                    print(f"Ocorreu o seguinte erro: {type(e)}")
+                else:
+                    break
+            
+            # Validar opção existente
+            valido = True
+
+            match opcao:
+                case 1:
+                    listar()
+                case 2:
+                    cadastrar()
+                case 3:
+                    print("-"*largura)
+                    print(Fore.BLUE + "Saindo do sistema... Até logo!".center(largura))
+                    print("-"*largura)
+
+                    loop_menu = False
+                case _:
+                    print(f"{Fore.RED}Opção não existe! Tente novamente.")
+                    valido = False
+            
+            if valido:
+                break
+
+
 # Testes
 if __name__ == "__main__":
-    cadastrar()
-    listar()
+    menu()
     
